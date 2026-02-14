@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUY &amp; AUGUST — Valentine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Fixed top navigation: GUY&AUGUST (Home), Memories, Lock -->
+  <nav class="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-link nav-link-brand" data-section="home">GUY&AUGUST</a>
+      <a href="#memories" class="nav-link" data-section="memories">Memories</a>
+      <a href="#photobooth" class="nav-link" data-section="photobooth">Photo Booth</a>
+      <a href="#lock" class="nav-link" data-section="lock">Lock</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Home: hero message + two circular portraits (August left, Guy right) -->
+    <section id="home" class="page home-page" aria-label="Home">
+      <div class="home-content">
+        <h1 class="hero-title">HAPPY VALENTINE'S DAY</h1>
+        <div class="portraits">
+          <figure class="portrait">
+            <div class="portrait-image">
+              <img src="images/august.png" alt="August" />
+            </div>
+            <figcaption class="portrait-caption">August</figcaption>
+            <p class="portrait-bio">159 cm cute little baby</p>
+          </figure>
+          <figure class="portrait">
+            <div class="portrait-image">
+              <img src="images/guy.png" alt="Guy" />
+            </div>
+            <figcaption class="portrait-caption">Guy</figcaption>
+            <p class="portrait-bio">Ragebait final boss</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memories: vertical sequence title → scrollable gallery of photos per milestone -->
+    <section id="memories" class="page memories-page" aria-label="Memories">
+      <div class="memories-inner">
+        <h2 class="memories-heading">Memories</h2>
+
+        <article class="memory">
+          <h3 class="memory-title">First Date</h3>
+          <div class="memory-gallery" aria-label="First Date photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-date-1.png" alt="First Date" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-date-2.png" alt="First Date" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-date-3.png" alt="First Date" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-date-4.png" alt="First Date" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-date-5.png" alt="First Date" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="memory">
+          <h3 class="memory-title">First Auggie Birthday</h3>
+          <div class="memory-gallery" aria-label="First Auggie Birthday photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-auggie-birthday-1.png" alt="First Auggie Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-auggie-birthday-2.png" alt="First Auggie Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-auggie-birthday-3.png" alt="First Auggie Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="memory">
+          <h3 class="memory-title">Second Auggie Birthday</h3>
+          <div class="memory-gallery" aria-label="Second Auggie Birthday photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center">
+                <video src="videos/second-auggie-birthday.mp4" controls playsinline preload="metadata" aria-label="Second Auggie Birthday"></video>
+              </div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/second-auggie-birthday-1.png" alt="Second Auggie Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/second-auggie-birthday-2.png" alt="Second Auggie Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="memory">
+          <h3 class="memory-title">First Anniversary</h3>
+          <div class="memory-gallery" aria-label="First Anniversary photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-anniversary-1.png" alt="First Anniversary" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-anniversary-2.png" alt="First Anniversary" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/first-anniversary-3.png" alt="First Anniversary" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="memory">
+          <h3 class="memory-title">Guy Birthday</h3>
+          <div class="memory-gallery" aria-label="Guy Birthday photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/guy-birthday-1.png" alt="Guy Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/guy-birthday-2.png" alt="Guy Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/guy-birthday-3.png" alt="Guy Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/guy-birthday-4.png" alt="Guy Birthday" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="memory">
+          <h3 class="memory-title">Pattaya with Auggie</h3>
+          <div class="memory-gallery" aria-label="Pattaya with Auggie photos">
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/pattaya-1.png" alt="Pattaya with Auggie" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/pattaya-2.png" alt="Pattaya with Auggie" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/pattaya-3.png" alt="Pattaya with Auggie" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+            <div class="memory-photo-wrap">
+              <div class="memory-photo" data-frame="center center"><img src="images/pattaya-4.png" alt="Pattaya with Auggie" /></div>
+              <input type="file" class="memory-upload-input" accept="image/*,video/*" aria-label="Upload photo or video" />
+              <button type="button" class="memory-upload-btn" title="Add photo or video">+</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Photo Booth: camera capture, photos displayed below -->
+    <section id="photobooth" class="page photobooth-page" aria-label="Photo Booth">
+      <div class="photobooth-content">
+        <h2 class="photobooth-title">Photo Booth</h2>
+        <div class="photobooth-camera">
+          <video id="photobooth-video" class="photobooth-video" autoplay playsinline muted aria-label="Camera preview"></video>
+          <div id="photobooth-placeholder" class="photobooth-placeholder">Allow camera to start</div>
+        </div>
+        <div class="photobooth-actions">
+          <button type="button" id="photobooth-capture" class="photobooth-btn" disabled>Take photo</button>
+          <button type="button" id="photobooth-start" class="photobooth-btn photobooth-btn-primary">Start camera</button>
+        </div>
+        <div id="photobooth-gallery" class="photobooth-gallery" aria-label="Your photos"></div>
+      </div>
+    </section>
+
+    <!-- Lock: centered state; locked by default, toggle in JS when August arrives -->
+    <section id="lock" class="page lock-page" aria-label="Lock">
+      <div class="lock-content">
+        <!-- Locked state (default) -->
+        <div id="lock-locked" class="lock-state" aria-hidden="false">
+          <h2 class="lock-title">Locked ❤️</h2>
+          <p class="lock-message">This page will open when August arrives in the USA.</p>
+        </div>
+        <!-- Unlocked state (hidden until unlocked = true in script.js) -->
+        <div id="lock-unlocked" class="lock-state lock-state-unlocked" aria-hidden="true" hidden>
+          <h2 class="lock-title">Unlocked</h2>
+          <p class="lock-message">Welcome to the next chapter ✨</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+/* ==========================================================================
+   GUY&AUGUST Valentine — Visual Style (context.MD)
+   Minimal, romantic, premium, modern, clean.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Color palette (elegant Valentine — not childish)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-bg: #FFF0F2;        /* Cream Blush — one tone pinker */
+  --color-surface: #FFFFFF;   /* Soft White — surface/card */
+  --color-text: #1E1E1E;     /* Charcoal — primary text */
+  --color-text-muted: #6B6B6B; /* Warm Gray — secondary text */
+  --color-accent: #D94B6A;    /* Rose — nav active, subtle highlights */
+  --color-accent-soft: #F6D6DE; /* Rose Tint */
+  --color-border: #EFE7EA;   /* Border / divider */
+  /* Valentine style — soft pink fill, dark red outline stroke (no blur) */
+  --font-valentine: "Lora", Georgia, serif;
+  --color-valentine: #f0a8b4;
+  --color-valentine-shadow: #b83d52;
+  --text-stroke-valentine: 1px var(--color-valentine-shadow);
+  --color-valentine-muted: #e895a3;
+}
+
+/* --------------------------------------------------------------------------
+   Base & typography — clean sans-serif, readable
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-valentine);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--color-valentine);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   Fixed top navigation — 3 tabs, active accent underline
+   -------------------------------------------------------------------------- */
+/* Tab menu: keep clean sans-serif, no script font or pink shadow */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-shadow: none;
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease, font-size 0.25s ease, font-weight 0.25s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+}
+
+/* Active tab: bigger text, accent color, underline — updates when you scroll */
+.nav-link.is-active {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-bottom-color: var(--color-accent);
+}
+
+.nav-link-brand {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.nav-link-brand.is-active {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Page sections — full viewport height, centered content
+   -------------------------------------------------------------------------- */
+.page {
+  min-height: 100vh;
+  padding: 5rem 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   Home page — hero message + two circular portraits
+   Hero text: bold, slightly spaced, centered. Portraits smaller, supporting.
+   -------------------------------------------------------------------------- */
+.home-page {
+  padding-top: 6rem;
+}
+
+.home-content {
+  text-align: center;
+  max-width: 560px;
+  overflow-x: auto;
+}
+
+.hero-title {
+  margin: 0 0 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--color-valentine);
+  -webkit-text-stroke: 3px var(--color-valentine-shadow);
+  white-space: nowrap;
+}
+
+/* Two circular portraits — left August, right Guy; bio under each name */
+.portraits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.portrait {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portrait-bio {
+  max-width: 180px;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--color-valentine-muted);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  text-align: center;
+}
+
+/* Circular crop, subtle border + soft shadow (context.MD) */
+.portrait-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-accent-soft);
+  border: 3px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.portrait-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait-caption {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-valentine-muted);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+}
+
+/* --------------------------------------------------------------------------
+   Memories page — vertical sequence: title → photo, large spacing
+   -------------------------------------------------------------------------- */
+.memories-page {
+  align-items: flex-start;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+.memories-inner {
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.memories-heading {
+  margin: 0 0 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-valentine);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  text-align: center;
+}
+
+.memory {
+  margin-bottom: 3.5rem;
+}
+
+.memory:last-child {
+  margin-bottom: 0;
+}
+
+.memory-title {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-valentine);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  text-align: center;
+}
+
+/* Horizontal scrolling gallery — multiple photos per memory */
+.memory-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-top: 1.25rem;
+  padding: 0 0.25rem 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.memory-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.memory-gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.memory-gallery::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Wrapper: photo frame + upload button to the right */
+.memory-photo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Each photo in the gallery: fixed width, rounded corners (context.MD) */
+.memory-photo {
+  flex: 0 0 280px;
+  width: 280px;
+  min-height: 210px;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background-color: var(--color-accent-soft);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.memory-photo img,
+.memory-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 12px;
+}
+
+.memory-photo video {
+  background: #000;
+}
+
+/* Frame position — adjust how the image/video is cropped in the frame */
+.memory-photo[data-frame="top left"] img,
+.memory-photo[data-frame="top left"] video { object-position: top left; }
+.memory-photo[data-frame="top center"] img,
+.memory-photo[data-frame="top center"] video { object-position: top center; }
+.memory-photo[data-frame="top right"] img,
+.memory-photo[data-frame="top right"] video { object-position: top right; }
+.memory-photo[data-frame="center left"] img,
+.memory-photo[data-frame="center left"] video { object-position: center left; }
+.memory-photo[data-frame="center center"] img,
+.memory-photo[data-frame="center center"] video { object-position: center center; }
+.memory-photo[data-frame="center right"] img,
+.memory-photo[data-frame="center right"] video { object-position: center right; }
+.memory-photo[data-frame="bottom left"] img,
+.memory-photo[data-frame="bottom left"] video { object-position: bottom left; }
+.memory-photo[data-frame="bottom center"] img,
+.memory-photo[data-frame="bottom center"] video { object-position: bottom center; }
+.memory-photo[data-frame="bottom right"] img,
+.memory-photo[data-frame="bottom right"] video { object-position: bottom right; }
+
+/* Frame adjust overlay — shown on double-click/tap on photo; position buttons */
+.memory-frame-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.memory-frame-overlay[hidden] {
+  display: none;
+}
+
+.memory-frame-overlay-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 12px;
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.memory-frame-overlay .frame-pos-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-valentine-muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.memory-frame-overlay .frame-pos-btn:hover {
+  color: var(--color-valentine);
+  border-color: var(--color-valentine-shadow);
+  background: var(--color-accent-soft);
+}
+
+.memory-frame-overlay .frame-pos-btn[aria-pressed="true"] {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* Hidden file input — triggered by button */
+.memory-upload-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Minimal upload button — right of each photo frame */
+.memory-upload-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-valentine-muted);
+  font-family: var(--font-valentine);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.memory-upload-btn:hover {
+  color: var(--color-valentine);
+  border-color: var(--color-valentine-shadow);
+  background: var(--color-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   Photo Booth — camera preview, capture button, gallery below
+   -------------------------------------------------------------------------- */
+.photobooth-page {
+  padding-top: 5rem;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+}
+
+.photobooth-content {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.photobooth-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-valentine);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+}
+
+.photobooth-camera {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1rem;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-border);
+  border: 2px solid var(--color-border);
+}
+
+.photobooth-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1);
+  background: #000;
+}
+
+.photobooth-camera .photobooth-video {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.photobooth-camera.is-live .photobooth-video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.photobooth-camera.is-live .photobooth-placeholder {
+  display: none !important;
+}
+
+.photobooth-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  background: var(--color-accent-soft);
+}
+
+.photobooth-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.photobooth-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-valentine-muted);
+  font-family: var(--font-valentine);
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.photobooth-btn:hover:not(:disabled) {
+  color: var(--color-valentine);
+  border-color: var(--color-valentine-shadow);
+  background: var(--color-accent-soft);
+}
+
+.photobooth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.photobooth-btn-primary {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.photobooth-btn-primary:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.photobooth-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.photobooth-captured-wrap {
+  position: relative;
+  line-height: 0;
+}
+
+.photobooth-captured-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.photobooth-delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.photobooth-delete-btn:hover {
+  background: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Lock page — centered lock state, mysterious/anticipatory
+   -------------------------------------------------------------------------- */
+.lock-page {
+  padding-top: 5rem;
+}
+
+.lock-content {
+  text-align: center;
+  max-width: 420px;
+}
+
+.lock-state {
+  padding: 2rem;
+}
+
+.lock-title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-valentine);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+}
+
+.lock-message {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-valentine-muted);
+  -webkit-text-stroke: var(--text-stroke-valentine);
+  line-height: 1.6;
+}
+
+.lock-state-unlocked .lock-message {
+  color: var(--color-valentine);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive — comfortable padding, mobile-friendly
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .nav-inner {
+    padding: 0.75rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+
+  .portraits {
+    gap: 2rem;
+  }
+
+  .portrait-bio {
+    max-width: 140px;
+    font-size: 0.8rem;
+  }
+
+  .portrait-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .memory {
+    margin-bottom: 2.5rem;
+  }
+}
